@@ -4,6 +4,7 @@ namespace momentspack;
 table T_MOMENTS_ARTICLE_ADD_RQ
 {
 	s_rq_head:commonpack.S_RQ_HEAD;
+	article_id:ulong;	//文章id(客户端生成)
 	user_id:ulong;                 //用户id
 	user_nickname:string;                  //用户昵称
 	title:string;	//标题
