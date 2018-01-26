@@ -15,6 +15,8 @@ var NEW_DEF_GROUP_BASE                                       = (NEW_DEF_DEFAULT_
 var NEW_DEF_OFFCIAL_BASE                                     = (NEW_DEF_DEFAULT_CLIENT_PACKET_BASE + 6000);
 //商家小二起始地址
 var NEW_DEF_BUSINESS_BASE                                    = (NEW_DEF_DEFAULT_CLIENT_PACKET_BASE + 6500);
+//朋友圈起始地址
+var NEW_DEF_MOMENTS_BASE                                     = (NEW_DEF_DEFAULT_CLIENT_PACKET_BASE + 7000);
 
 //////////////////////////////////////sys start//////////////////////////////////////
 //握手包
@@ -259,5 +261,35 @@ var NEW_DEF_BUSINESS_SETPROMPTS_RS                           = (NEW_DEF_BUSINESS
 //获取商家提示语信息
 var NEW_DEF_BUSINESS_GETPROMPTS_RQ                           = (NEW_DEF_BUSINESS_BASE + 27);
 var NEW_DEF_BUSINESS_GETPROMPTS_RS                           = (NEW_DEF_BUSINESS_BASE + 28);
+//发布朋友圈
+var NEW_DEF_MOMENTS_ADDARTICLE_RQ                            = (NEW_DEF_MOMENTS_BASE + 1);
+var NEW_DEF_MOMENTS_ADDARTICLE_RS                            = (NEW_DEF_MOMENTS_BASE + 2);
+//删除朋友圈
+var NEW_DEF_MOMENTS_DELARTICLE_RQ                            = (NEW_DEF_MOMENTS_BASE + 3);
+var NEW_DEF_MOMENTS_DELARTICLE_RS                            = (NEW_DEF_MOMENTS_BASE + 4);
+//按文章id查询朋友圈内容
+var NEW_DEF_MOMENTS_QUERYBYIDS_RQ                            = (NEW_DEF_MOMENTS_BASE + 5);
+var NEW_DEF_MOMENTS_QUERYBYIDS_RS                            = (NEW_DEF_MOMENTS_BASE + 6);
+//查询指定用户朋友圈
+var NEW_DEF_MOMENTS_QUERYBYUSER_RQ                           = (NEW_DEF_MOMENTS_BASE + 7);
+var NEW_DEF_MOMENTS_QUERYBYUSER_RS                           = (NEW_DEF_MOMENTS_BASE + 8);
+//发表朋友圈评论
+var NEW_DEF_MOMENTS_ADDCOMMENT_RQ                            = (NEW_DEF_MOMENTS_BASE + 9);
+var NEW_DEF_MOMENTS_ADDCOMMENT_RS                            = (NEW_DEF_MOMENTS_BASE + 10);
+//删除朋友圈评论
+var NEW_DEF_MOMENTS_DELCOMMENT_RQ                            = (NEW_DEF_MOMENTS_BASE + 11);
+var NEW_DEF_MOMENTS_DELCOMMENT_RS                            = (NEW_DEF_MOMENTS_BASE + 12);
+//查询朋友圈设置
+var NEW_DEF_MOMENTS_QUERYSETTING_RQ                          = (NEW_DEF_MOMENTS_BASE + 13);
+var NEW_DEF_MOMENTS_QUERYSETTING_RS                          = (NEW_DEF_MOMENTS_BASE + 14);
+//更新朋友圈设置
+var NEW_DEF_MOMENTS_UPDSETTING_RQ                            = (NEW_DEF_MOMENTS_BASE + 15);
+var NEW_DEF_MOMENTS_UPDSETTING_RS                            = (NEW_DEF_MOMENTS_BASE + 16);
+//更新朋友圈黑名单设置
+var NEW_DEF_MOMENTS_UPDBLACKLIST_RQ                          = (NEW_DEF_MOMENTS_BASE + 17);
+var NEW_DEF_MOMENTS_UPDBLACKLIST_RS                          = (NEW_DEF_MOMENTS_BASE + 18;
+//更新不关注名单
+var NEW_DEF_MOMENTS_UPDNOTCARELIST_RQ                        = (NEW_DEF_MOMENTS_BASE + 19);
+var NEW_DEF_MOMENTS_UPDNOTCARELIST_RS                        = (NEW_DEF_MOMENTS_BASE + 20);
 //////////////////////////////////////business end///////////////////////////////////////
 

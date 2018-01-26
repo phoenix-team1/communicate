@@ -23,6 +23,8 @@ public interface ErrorCodeDef
     RET_OFFCIAL_BASE                                    = 0x28000000,
     //商家错误
     RET_BUSINESS_BASE                                   = 0x30000000,
+    //朋友圈错误
+    RET_MOMENTS_BASE                                    = 0x32000000,
 
 //////////////////////////////////////sys start//////////////////////////////////////
     //此账号在另一处登录了
@@ -199,6 +201,26 @@ public interface ErrorCodeDef
 //////////////////////////////////////offcial end///////////////////////////////////////
 
 //////////////////////////////////////business start//////////////////////////////////////
+    //朋友圈保存异常，请稍后再试!
+    RET_MOMENTS_ARTICLE_SAVED_ERROR                     = (RET_MOMENTS_BASE + 1),
+    //朋友圈删除异常，请稍后再试!
+    RET_MOMENTS_ARTICLE_DELETED_ERROR                   = (RET_MOMENTS_BASE + 2),
+    //没有找到信息，请稍后再试!
+    RET_MOMENTS_ARTICLE_QUERY_ERROR                     = (RET_MOMENTS_BASE + 3),
+    //评论保存异常，请稍后再试!
+    RET_MOMENTS_COMMENT_SAVE_ERROR                      = (RET_MOMENTS_BASE + 4),
+    //评论删除异常，请稍候再试!
+    RET_MOMENTS_COMMENT_DELETED_ERROR                   = (RET_MOMENTS_BASE + 5),
+    //朋友圈设置保存异常，请稍候再试!
+    RET_MOMENTS_SETTING_SAVE_ERROR                      = (RET_MOMENTS_BASE + 6),
+    //朋友圈黑名单设置保存异常，请稍候再试!
+    RET_MOMENTS_SETTING_BLACKLIST_SAVE_ERROR            = (RET_MOMENTS_BASE + 7),
+    //朋友圈不关注设置保存异常，请稍候再试!
+    RET_MOMENTS_SETTING_NOTCARELIST_SAVE_ERROR          = (RET_MOMENTS_BASE + 8),
+    //朋友圈配置查询异常，请稍候再试!
+    RET_MOMENTS_SETTING_QUERY_ERROR                     = (RET_MOMENTS_BASE + 9),
+    //操作参数错误！
+    RET_MOMENTS_PARAM_ERROR                             = (RET_MOMENTS_BASE + 10),
 //////////////////////////////////////business end///////////////////////////////////////
 
     END_OF_ERROR = -1;
