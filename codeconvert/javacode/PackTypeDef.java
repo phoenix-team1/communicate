@@ -293,7 +293,7 @@ public interface PackTypeDef
     NEW_DEF_MOMENTS_UPDSETTING_RS                       = (NEW_DEF_MOMENTS_BASE + 16),
     //更新朋友圈黑名单设置
     NEW_DEF_MOMENTS_UPDBLACKLIST_RQ                     = (NEW_DEF_MOMENTS_BASE + 17),
-    NEW_DEF_MOMENTS_UPDBLACKLIST_RS                     = (NEW_DEF_MOMENTS_BASE + 18,
+    NEW_DEF_MOMENTS_UPDBLACKLIST_RS                     = (NEW_DEF_MOMENTS_BASE + 18),
     //更新不关注名单
     NEW_DEF_MOMENTS_UPDNOTCARELIST_RQ                   = (NEW_DEF_MOMENTS_BASE + 19),
     NEW_DEF_MOMENTS_UPDNOTCARELIST_RS                   = (NEW_DEF_MOMENTS_BASE + 20),
