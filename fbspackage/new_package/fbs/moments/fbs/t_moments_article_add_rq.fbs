@@ -13,6 +13,7 @@ table T_MOMENTS_ARTICLE_ADD_RQ
 	priv_type:int;	//阅读权限类型 1公开2秘密3白名单4黑名单
 	white_list:string;	//阅读白名单用户id列表,中间用','隔开,最后以','结尾
 	black_list:string;	//阅读黑名单用户id列表,中间用','隔开,最后以','结尾
+	create_time:ulong; //创建时间
 }
 
 root_type T_MOMENTS_ARTICLE_ADD_RQ;

@@ -22,7 +22,8 @@ struct T_MOMENTS_ARTICLE_ADD_RQ FLATBUFFERS_FINAL_CLASS : private flatbuffers::T
     VT_CONTENT = 16,
     VT_PRIV_TYPE = 18,
     VT_WHITE_LIST = 20,
-    VT_BLACK_LIST = 22
+    VT_BLACK_LIST = 22,
+    VT_CREATE_TIME = 24
   };
   const commonpack::S_RQ_HEAD *s_rq_head() const { return GetStruct<const commonpack::S_RQ_HEAD *>(VT_S_RQ_HEAD); }
   uint64_t article_id() const { return GetField<uint64_t>(VT_ARTICLE_ID, 0); }
@@ -34,6 +35,7 @@ struct T_MOMENTS_ARTICLE_ADD_RQ FLATBUFFERS_FINAL_CLASS : private flatbuffers::T
   int32_t priv_type() const { return GetField<int32_t>(VT_PRIV_TYPE, 0); }
   const flatbuffers::String *white_list() const { return GetPointer<const flatbuffers::String *>(VT_WHITE_LIST); }
   const flatbuffers::String *black_list() const { return GetPointer<const flatbuffers::String *>(VT_BLACK_LIST); }
+  uint64_t create_time() const { return GetField<uint64_t>(VT_CREATE_TIME, 0); }
   bool Verify(flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
            VerifyField<commonpack::S_RQ_HEAD>(verifier, VT_S_RQ_HEAD) &&
@@ -51,6 +53,7 @@ struct T_MOMENTS_ARTICLE_ADD_RQ FLATBUFFERS_FINAL_CLASS : private flatbuffers::T
            verifier.Verify(white_list()) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_BLACK_LIST) &&
            verifier.Verify(black_list()) &&
+           VerifyField<uint64_t>(verifier, VT_CREATE_TIME) &&
            verifier.EndTable();
   }
 };
@@ -68,10 +71,11 @@ struct T_MOMENTS_ARTICLE_ADD_RQBuilder {
   void add_priv_type(int32_t priv_type) { fbb_.AddElement<int32_t>(T_MOMENTS_ARTICLE_ADD_RQ::VT_PRIV_TYPE, priv_type, 0); }
   void add_white_list(flatbuffers::Offset<flatbuffers::String> white_list) { fbb_.AddOffset(T_MOMENTS_ARTICLE_ADD_RQ::VT_WHITE_LIST, white_list); }
   void add_black_list(flatbuffers::Offset<flatbuffers::String> black_list) { fbb_.AddOffset(T_MOMENTS_ARTICLE_ADD_RQ::VT_BLACK_LIST, black_list); }
+  void add_create_time(uint64_t create_time) { fbb_.AddElement<uint64_t>(T_MOMENTS_ARTICLE_ADD_RQ::VT_CREATE_TIME, create_time, 0); }
   T_MOMENTS_ARTICLE_ADD_RQBuilder(flatbuffers::FlatBufferBuilder &_fbb) : fbb_(_fbb) { start_ = fbb_.StartTable(); }
   T_MOMENTS_ARTICLE_ADD_RQBuilder &operator=(const T_MOMENTS_ARTICLE_ADD_RQBuilder &);
   flatbuffers::Offset<T_MOMENTS_ARTICLE_ADD_RQ> Finish() {
-    auto o = flatbuffers::Offset<T_MOMENTS_ARTICLE_ADD_RQ>(fbb_.EndTable(start_, 10));
+    auto o = flatbuffers::Offset<T_MOMENTS_ARTICLE_ADD_RQ>(fbb_.EndTable(start_, 11));
     return o;
   }
 };
@@ -86,8 +90,10 @@ inline flatbuffers::Offset<T_MOMENTS_ARTICLE_ADD_RQ> CreateT_MOMENTS_ARTICLE_ADD
     flatbuffers::Offset<flatbuffers::String> content = 0,
     int32_t priv_type = 0,
     flatbuffers::Offset<flatbuffers::String> white_list = 0,
-    flatbuffers::Offset<flatbuffers::String> black_list = 0) {
+    flatbuffers::Offset<flatbuffers::String> black_list = 0,
+    uint64_t create_time = 0) {
   T_MOMENTS_ARTICLE_ADD_RQBuilder builder_(_fbb);
+  builder_.add_create_time(create_time);
   builder_.add_user_id(user_id);
   builder_.add_article_id(article_id);
   builder_.add_black_list(black_list);
@@ -111,8 +117,9 @@ inline flatbuffers::Offset<T_MOMENTS_ARTICLE_ADD_RQ> CreateT_MOMENTS_ARTICLE_ADD
     const char *content = nullptr,
     int32_t priv_type = 0,
     const char *white_list = nullptr,
-    const char *black_list = nullptr) {
-  return CreateT_MOMENTS_ARTICLE_ADD_RQ(_fbb, s_rq_head, article_id, user_id, user_nickname ? _fbb.CreateString(user_nickname) : 0, title ? _fbb.CreateString(title) : 0, content_type, content ? _fbb.CreateString(content) : 0, priv_type, white_list ? _fbb.CreateString(white_list) : 0, black_list ? _fbb.CreateString(black_list) : 0);
+    const char *black_list = nullptr,
+    uint64_t create_time = 0) {
+  return CreateT_MOMENTS_ARTICLE_ADD_RQ(_fbb, s_rq_head, article_id, user_id, user_nickname ? _fbb.CreateString(user_nickname) : 0, title ? _fbb.CreateString(title) : 0, content_type, content ? _fbb.CreateString(content) : 0, priv_type, white_list ? _fbb.CreateString(white_list) : 0, black_list ? _fbb.CreateString(black_list) : 0, create_time);
 }
 
 inline const momentspack::T_MOMENTS_ARTICLE_ADD_RQ *GetT_MOMENTS_ARTICLE_ADD_RQ(const void *buf) {

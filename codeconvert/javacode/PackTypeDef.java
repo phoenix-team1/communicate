@@ -297,6 +297,8 @@ public interface PackTypeDef
     //更新不关注名单
     NEW_DEF_MOMENTS_UPDNOTCARELIST_RQ                   = (NEW_DEF_MOMENTS_BASE + 19),
     NEW_DEF_MOMENTS_UPDNOTCARELIST_RS                   = (NEW_DEF_MOMENTS_BASE + 20),
+    //推送朋友圈更新信息
+    NEW_DEF_MOMENTS_ADDARTICLE_NOTIFY                   = (NEW_DEF_MOMENTS_BASE + 21),
 //////////////////////////////////////business end///////////////////////////////////////
 
     END_OF_TYPE = 19999;

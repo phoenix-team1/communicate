@@ -30,8 +30,9 @@ public final class T_MOMENTS_ARTICLE_ADD_RQ extends Table {
   public ByteBuffer whiteListAsByteBuffer() { return __vector_as_bytebuffer(20, 1); }
   public String blackList() { int o = __offset(22); return o != 0 ? __string(o + bb_pos) : null; }
   public ByteBuffer blackListAsByteBuffer() { return __vector_as_bytebuffer(22, 1); }
+  public long createTime() { int o = __offset(24); return o != 0 ? bb.getLong(o + bb_pos) : 0L; }
 
-  public static void startT_MOMENTS_ARTICLE_ADD_RQ(FlatBufferBuilder builder) { builder.startObject(10); }
+  public static void startT_MOMENTS_ARTICLE_ADD_RQ(FlatBufferBuilder builder) { builder.startObject(11); }
   public static void addSRqHead(FlatBufferBuilder builder, int sRqHeadOffset) { builder.addStruct(0, sRqHeadOffset, 0); }
   public static void addArticleId(FlatBufferBuilder builder, long articleId) { builder.addLong(1, articleId, 0L); }
   public static void addUserId(FlatBufferBuilder builder, long userId) { builder.addLong(2, userId, 0L); }
@@ -42,6 +43,7 @@ public final class T_MOMENTS_ARTICLE_ADD_RQ extends Table {
   public static void addPrivType(FlatBufferBuilder builder, int privType) { builder.addInt(7, privType, 0); }
   public static void addWhiteList(FlatBufferBuilder builder, int whiteListOffset) { builder.addOffset(8, whiteListOffset, 0); }
   public static void addBlackList(FlatBufferBuilder builder, int blackListOffset) { builder.addOffset(9, blackListOffset, 0); }
+  public static void addCreateTime(FlatBufferBuilder builder, long createTime) { builder.addLong(10, createTime, 0L); }
   public static int endT_MOMENTS_ARTICLE_ADD_RQ(FlatBufferBuilder builder) {
     int o = builder.endObject();
     return o;

@@ -291,5 +291,7 @@ var NEW_DEF_MOMENTS_UPDBLACKLIST_RS                          = (NEW_DEF_MOMENTS_
 //更新不关注名单
 var NEW_DEF_MOMENTS_UPDNOTCARELIST_RQ                        = (NEW_DEF_MOMENTS_BASE + 19);
 var NEW_DEF_MOMENTS_UPDNOTCARELIST_RS                        = (NEW_DEF_MOMENTS_BASE + 20);
+//推送朋友圈更新信息
+var NEW_DEF_MOMENTS_ADDARTICLE_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 21);
 //////////////////////////////////////business end///////////////////////////////////////
 
