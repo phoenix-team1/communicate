@@ -150,16 +150,18 @@ inline flatbuffers::Offset<T_MOMENTS_ARTICLE_DTO> CreateT_MOMENTS_ARTICLE_DTODir
 
 struct T_MOMENTS_COMMENT_DTO FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   enum {
-    VT_USER_ID = 4,
-    VT_USER_NICKNAME = 6,
-    VT_ARTICLE_USER_ID = 8,
-    VT_ARTICLE_ID = 10,
-    VT_COMMENT_TYPE = 12,
-    VT_CONTENT = 14,
-    VT_COMMENTED_USER_ID = 16,
-    VT_COMMENTED_USER_NICKNAM = 18,
-    VT_CREATE_TIME = 20
+    VT_COMMENT_ID = 4,
+    VT_USER_ID = 6,
+    VT_USER_NICKNAME = 8,
+    VT_ARTICLE_USER_ID = 10,
+    VT_ARTICLE_ID = 12,
+    VT_COMMENT_TYPE = 14,
+    VT_CONTENT = 16,
+    VT_COMMENTED_USER_ID = 18,
+    VT_COMMENTED_USER_NICKNAM = 20,
+    VT_CREATE_TIME = 22
   };
+  uint64_t comment_id() const { return GetField<uint64_t>(VT_COMMENT_ID, 0); }
   uint64_t user_id() const { return GetField<uint64_t>(VT_USER_ID, 0); }
   const flatbuffers::String *user_nickname() const { return GetPointer<const flatbuffers::String *>(VT_USER_NICKNAME); }
   uint64_t article_user_id() const { return GetField<uint64_t>(VT_ARTICLE_USER_ID, 0); }
@@ -171,6 +173,7 @@ struct T_MOMENTS_COMMENT_DTO FLATBUFFERS_FINAL_CLASS : private flatbuffers::Tabl
   uint64_t create_time() const { return GetField<uint64_t>(VT_CREATE_TIME, 0); }
   bool Verify(flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
+           VerifyField<uint64_t>(verifier, VT_COMMENT_ID) &&
            VerifyField<uint64_t>(verifier, VT_USER_ID) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_USER_NICKNAME) &&
            verifier.Verify(user_nickname()) &&
@@ -190,6 +193,7 @@ struct T_MOMENTS_COMMENT_DTO FLATBUFFERS_FINAL_CLASS : private flatbuffers::Tabl
 struct T_MOMENTS_COMMENT_DTOBuilder {
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
+  void add_comment_id(uint64_t comment_id) { fbb_.AddElement<uint64_t>(T_MOMENTS_COMMENT_DTO::VT_COMMENT_ID, comment_id, 0); }
   void add_user_id(uint64_t user_id) { fbb_.AddElement<uint64_t>(T_MOMENTS_COMMENT_DTO::VT_USER_ID, user_id, 0); }
   void add_user_nickname(flatbuffers::Offset<flatbuffers::String> user_nickname) { fbb_.AddOffset(T_MOMENTS_COMMENT_DTO::VT_USER_NICKNAME, user_nickname); }
   void add_article_user_id(uint64_t article_user_id) { fbb_.AddElement<uint64_t>(T_MOMENTS_COMMENT_DTO::VT_ARTICLE_USER_ID, article_user_id, 0); }
@@ -202,12 +206,13 @@ struct T_MOMENTS_COMMENT_DTOBuilder {
   T_MOMENTS_COMMENT_DTOBuilder(flatbuffers::FlatBufferBuilder &_fbb) : fbb_(_fbb) { start_ = fbb_.StartTable(); }
   T_MOMENTS_COMMENT_DTOBuilder &operator=(const T_MOMENTS_COMMENT_DTOBuilder &);
   flatbuffers::Offset<T_MOMENTS_COMMENT_DTO> Finish() {
-    auto o = flatbuffers::Offset<T_MOMENTS_COMMENT_DTO>(fbb_.EndTable(start_, 9));
+    auto o = flatbuffers::Offset<T_MOMENTS_COMMENT_DTO>(fbb_.EndTable(start_, 10));
     return o;
   }
 };
 
 inline flatbuffers::Offset<T_MOMENTS_COMMENT_DTO> CreateT_MOMENTS_COMMENT_DTO(flatbuffers::FlatBufferBuilder &_fbb,
+    uint64_t comment_id = 0,
     uint64_t user_id = 0,
     flatbuffers::Offset<flatbuffers::String> user_nickname = 0,
     uint64_t article_user_id = 0,
@@ -223,6 +228,7 @@ inline flatbuffers::Offset<T_MOMENTS_COMMENT_DTO> CreateT_MOMENTS_COMMENT_DTO(fl
   builder_.add_article_id(article_id);
   builder_.add_article_user_id(article_user_id);
   builder_.add_user_id(user_id);
+  builder_.add_comment_id(comment_id);
   builder_.add_commented_user_nicknam(commented_user_nicknam);
   builder_.add_content(content);
   builder_.add_user_nickname(user_nickname);
@@ -231,6 +237,7 @@ inline flatbuffers::Offset<T_MOMENTS_COMMENT_DTO> CreateT_MOMENTS_COMMENT_DTO(fl
 }
 
 inline flatbuffers::Offset<T_MOMENTS_COMMENT_DTO> CreateT_MOMENTS_COMMENT_DTODirect(flatbuffers::FlatBufferBuilder &_fbb,
+    uint64_t comment_id = 0,
     uint64_t user_id = 0,
     const char *user_nickname = nullptr,
     uint64_t article_user_id = 0,
@@ -240,7 +247,7 @@ inline flatbuffers::Offset<T_MOMENTS_COMMENT_DTO> CreateT_MOMENTS_COMMENT_DTODir
     uint64_t commented_user_id = 0,
     const char *commented_user_nicknam = nullptr,
     uint64_t create_time = 0) {
-  return CreateT_MOMENTS_COMMENT_DTO(_fbb, user_id, user_nickname ? _fbb.CreateString(user_nickname) : 0, article_user_id, article_id, comment_type, content ? _fbb.CreateString(content) : 0, commented_user_id, commented_user_nicknam ? _fbb.CreateString(commented_user_nicknam) : 0, create_time);
+  return CreateT_MOMENTS_COMMENT_DTO(_fbb, comment_id, user_id, user_nickname ? _fbb.CreateString(user_nickname) : 0, article_user_id, article_id, comment_type, content ? _fbb.CreateString(content) : 0, commented_user_id, commented_user_nicknam ? _fbb.CreateString(commented_user_nicknam) : 0, create_time);
 }
 
 }  // namespace momentspack

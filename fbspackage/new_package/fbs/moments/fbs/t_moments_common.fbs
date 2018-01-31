@@ -22,6 +22,7 @@ table T_MOMENTS_ARTICLE_DTO
 
 table T_MOMENTS_COMMENT_DTO
 {
+	comment_id:ulong;	//评论id
 	user_id:ulong;		//发表评论用户id
 	user_nickname:string;	//发表评论用户昵称
 	article_user_id:ulong;	//相关文章用户id
