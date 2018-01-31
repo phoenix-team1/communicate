@@ -293,5 +293,8 @@ var NEW_DEF_MOMENTS_UPDNOTCARELIST_RQ                        = (NEW_DEF_MOMENTS_
 var NEW_DEF_MOMENTS_UPDNOTCARELIST_RS                        = (NEW_DEF_MOMENTS_BASE + 20);
 //推送朋友圈更新信息
 var NEW_DEF_MOMENTS_ADDARTICLE_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 21);
+//查询朋友圈信息
+var NEW_DEF_MOMENTS_QUERYTIMELIME_RQ                         = (NEW_DEF_MOMENTS_BASE + 22);
+var NEW_DEF_MOMENTS_QUERYTIMELIME_RS                         = (NEW_DEF_MOMENTS_BASE + 23);
 //////////////////////////////////////business end///////////////////////////////////////
 
