@@ -30,6 +30,6 @@ table T_MOMENTS_COMMENT_DTO
 	comment_type:byte;	//评论类型 1：普通评论 2：点赞
 	content:string;		//评论内容
 	commented_user_id:ulong;	//回复评论用户id
-	commented_user_nicknam:string;	//回复评论用户昵称
+	commented_user_nickname:string;	//回复评论用户昵称
 	create_time:ulong;	//评论时间
 }

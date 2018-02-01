@@ -24,8 +24,8 @@ public final class T_MOMENTS_COMMENT_DTO extends Table {
   public String content() { int o = __offset(16); return o != 0 ? __string(o + bb_pos) : null; }
   public ByteBuffer contentAsByteBuffer() { return __vector_as_bytebuffer(16, 1); }
   public long commentedUserId() { int o = __offset(18); return o != 0 ? bb.getLong(o + bb_pos) : 0L; }
-  public String commentedUserNicknam() { int o = __offset(20); return o != 0 ? __string(o + bb_pos) : null; }
-  public ByteBuffer commentedUserNicknamAsByteBuffer() { return __vector_as_bytebuffer(20, 1); }
+  public String commentedUserNickname() { int o = __offset(20); return o != 0 ? __string(o + bb_pos) : null; }
+  public ByteBuffer commentedUserNicknameAsByteBuffer() { return __vector_as_bytebuffer(20, 1); }
   public long createTime() { int o = __offset(22); return o != 0 ? bb.getLong(o + bb_pos) : 0L; }
 
   public static int createT_MOMENTS_COMMENT_DTO(FlatBufferBuilder builder,
@@ -37,7 +37,7 @@ public final class T_MOMENTS_COMMENT_DTO extends Table {
       byte comment_type,
       int contentOffset,
       long commented_user_id,
-      int commented_user_nicknamOffset,
+      int commented_user_nicknameOffset,
       long create_time) {
     builder.startObject(10);
     T_MOMENTS_COMMENT_DTO.addCreateTime(builder, create_time);
@@ -46,7 +46,7 @@ public final class T_MOMENTS_COMMENT_DTO extends Table {
     T_MOMENTS_COMMENT_DTO.addArticleUserId(builder, article_user_id);
     T_MOMENTS_COMMENT_DTO.addUserId(builder, user_id);
     T_MOMENTS_COMMENT_DTO.addCommentId(builder, comment_id);
-    T_MOMENTS_COMMENT_DTO.addCommentedUserNicknam(builder, commented_user_nicknamOffset);
+    T_MOMENTS_COMMENT_DTO.addCommentedUserNickname(builder, commented_user_nicknameOffset);
     T_MOMENTS_COMMENT_DTO.addContent(builder, contentOffset);
     T_MOMENTS_COMMENT_DTO.addUserNickname(builder, user_nicknameOffset);
     T_MOMENTS_COMMENT_DTO.addCommentType(builder, comment_type);
@@ -62,7 +62,7 @@ public final class T_MOMENTS_COMMENT_DTO extends Table {
   public static void addCommentType(FlatBufferBuilder builder, byte commentType) { builder.addByte(5, commentType, 0); }
   public static void addContent(FlatBufferBuilder builder, int contentOffset) { builder.addOffset(6, contentOffset, 0); }
   public static void addCommentedUserId(FlatBufferBuilder builder, long commentedUserId) { builder.addLong(7, commentedUserId, 0L); }
-  public static void addCommentedUserNicknam(FlatBufferBuilder builder, int commentedUserNicknamOffset) { builder.addOffset(8, commentedUserNicknamOffset, 0); }
+  public static void addCommentedUserNickname(FlatBufferBuilder builder, int commentedUserNicknameOffset) { builder.addOffset(8, commentedUserNicknameOffset, 0); }
   public static void addCreateTime(FlatBufferBuilder builder, long createTime) { builder.addLong(9, createTime, 0L); }
   public static int endT_MOMENTS_COMMENT_DTO(FlatBufferBuilder builder) {
     int o = builder.endObject();

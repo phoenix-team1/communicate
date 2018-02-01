@@ -1,0 +1,11 @@
+include "../../common/fbs/common.fbs";
+namespace momentspack;
+
+table T_MOMENTS_COMMENT_ADD_RS
+{
+	s_rs_head:commonpack.S_RS_HEAD;
+	peer_user_id:ulong;			//发表评论用户ID
+	comment_id:ulong;                      //评论id
+}
+
+root_type T_MOMENTS_COMMENT_ADD_RS;
