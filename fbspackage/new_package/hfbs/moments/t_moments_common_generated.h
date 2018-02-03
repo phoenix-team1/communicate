@@ -15,6 +15,32 @@ struct T_MOMENTS_ARTICLE_DTO;
 
 struct T_MOMENTS_COMMENT_DTO;
 
+struct T_MOMENTS_SETTING_DTO;
+
+struct T_SETTING_LIST_DTO;
+
+MANUALLY_ALIGNED_STRUCT(8) T_SETTING_LIST_DTO FLATBUFFERS_FINAL_CLASS {
+ private:
+  uint64_t user_id_;
+  uint64_t friend_id_;
+  int8_t list_type_;
+  int8_t list_value_;
+  int16_t __padding0;
+  int32_t __padding1;
+
+ public:
+  T_SETTING_LIST_DTO() { memset(this, 0, sizeof(T_SETTING_LIST_DTO)); }
+  T_SETTING_LIST_DTO(const T_SETTING_LIST_DTO &_o) { memcpy(this, &_o, sizeof(T_SETTING_LIST_DTO)); }
+  T_SETTING_LIST_DTO(uint64_t _user_id, uint64_t _friend_id, int8_t _list_type, int8_t _list_value)
+    : user_id_(flatbuffers::EndianScalar(_user_id)), friend_id_(flatbuffers::EndianScalar(_friend_id)), list_type_(flatbuffers::EndianScalar(_list_type)), list_value_(flatbuffers::EndianScalar(_list_value)), __padding0(0), __padding1(0) { (void)__padding0; (void)__padding1; }
+
+  uint64_t user_id() const { return flatbuffers::EndianScalar(user_id_); }
+  uint64_t friend_id() const { return flatbuffers::EndianScalar(friend_id_); }
+  int8_t list_type() const { return flatbuffers::EndianScalar(list_type_); }
+  int8_t list_value() const { return flatbuffers::EndianScalar(list_value_); }
+};
+STRUCT_END(T_SETTING_LIST_DTO, 24);
+
 struct T_TIMELINE_DTO FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   enum {
     VT_ARTICLE_USER_ID = 4,
@@ -248,6 +274,93 @@ inline flatbuffers::Offset<T_MOMENTS_COMMENT_DTO> CreateT_MOMENTS_COMMENT_DTODir
     const char *commented_user_nickname = nullptr,
     uint64_t create_time = 0) {
   return CreateT_MOMENTS_COMMENT_DTO(_fbb, comment_id, user_id, user_nickname ? _fbb.CreateString(user_nickname) : 0, article_user_id, article_id, comment_type, content ? _fbb.CreateString(content) : 0, commented_user_id, commented_user_nickname ? _fbb.CreateString(commented_user_nickname) : 0, create_time);
+}
+
+struct T_MOMENTS_SETTING_DTO FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  enum {
+    VT_USER_ID = 4,
+    VT_LIST_10_PIC_FREE = 6,
+    VT_MOMENTS_SCOPE = 8,
+    VT_MOMENTS_ENABLE = 10,
+    VT_MOMENTS_NOTIC = 12,
+    VT_BLACK_LIST = 14,
+    VT_NOT_CARE_LIST = 16,
+    VT_UPDATE_TIME = 18
+  };
+  uint64_t user_id() const { return GetField<uint64_t>(VT_USER_ID, 0); }
+  int8_t list_10_pic_free() const { return GetField<int8_t>(VT_LIST_10_PIC_FREE, 0); }
+  int8_t moments_scope() const { return GetField<int8_t>(VT_MOMENTS_SCOPE, 0); }
+  int8_t moments_enable() const { return GetField<int8_t>(VT_MOMENTS_ENABLE, 0); }
+  int8_t moments_notic() const { return GetField<int8_t>(VT_MOMENTS_NOTIC, 0); }
+  const flatbuffers::String *black_list() const { return GetPointer<const flatbuffers::String *>(VT_BLACK_LIST); }
+  const flatbuffers::String *not_care_list() const { return GetPointer<const flatbuffers::String *>(VT_NOT_CARE_LIST); }
+  uint64_t update_time() const { return GetField<uint64_t>(VT_UPDATE_TIME, 0); }
+  bool Verify(flatbuffers::Verifier &verifier) const {
+    return VerifyTableStart(verifier) &&
+           VerifyField<uint64_t>(verifier, VT_USER_ID) &&
+           VerifyField<int8_t>(verifier, VT_LIST_10_PIC_FREE) &&
+           VerifyField<int8_t>(verifier, VT_MOMENTS_SCOPE) &&
+           VerifyField<int8_t>(verifier, VT_MOMENTS_ENABLE) &&
+           VerifyField<int8_t>(verifier, VT_MOMENTS_NOTIC) &&
+           VerifyField<flatbuffers::uoffset_t>(verifier, VT_BLACK_LIST) &&
+           verifier.Verify(black_list()) &&
+           VerifyField<flatbuffers::uoffset_t>(verifier, VT_NOT_CARE_LIST) &&
+           verifier.Verify(not_care_list()) &&
+           VerifyField<uint64_t>(verifier, VT_UPDATE_TIME) &&
+           verifier.EndTable();
+  }
+};
+
+struct T_MOMENTS_SETTING_DTOBuilder {
+  flatbuffers::FlatBufferBuilder &fbb_;
+  flatbuffers::uoffset_t start_;
+  void add_user_id(uint64_t user_id) { fbb_.AddElement<uint64_t>(T_MOMENTS_SETTING_DTO::VT_USER_ID, user_id, 0); }
+  void add_list_10_pic_free(int8_t list_10_pic_free) { fbb_.AddElement<int8_t>(T_MOMENTS_SETTING_DTO::VT_LIST_10_PIC_FREE, list_10_pic_free, 0); }
+  void add_moments_scope(int8_t moments_scope) { fbb_.AddElement<int8_t>(T_MOMENTS_SETTING_DTO::VT_MOMENTS_SCOPE, moments_scope, 0); }
+  void add_moments_enable(int8_t moments_enable) { fbb_.AddElement<int8_t>(T_MOMENTS_SETTING_DTO::VT_MOMENTS_ENABLE, moments_enable, 0); }
+  void add_moments_notic(int8_t moments_notic) { fbb_.AddElement<int8_t>(T_MOMENTS_SETTING_DTO::VT_MOMENTS_NOTIC, moments_notic, 0); }
+  void add_black_list(flatbuffers::Offset<flatbuffers::String> black_list) { fbb_.AddOffset(T_MOMENTS_SETTING_DTO::VT_BLACK_LIST, black_list); }
+  void add_not_care_list(flatbuffers::Offset<flatbuffers::String> not_care_list) { fbb_.AddOffset(T_MOMENTS_SETTING_DTO::VT_NOT_CARE_LIST, not_care_list); }
+  void add_update_time(uint64_t update_time) { fbb_.AddElement<uint64_t>(T_MOMENTS_SETTING_DTO::VT_UPDATE_TIME, update_time, 0); }
+  T_MOMENTS_SETTING_DTOBuilder(flatbuffers::FlatBufferBuilder &_fbb) : fbb_(_fbb) { start_ = fbb_.StartTable(); }
+  T_MOMENTS_SETTING_DTOBuilder &operator=(const T_MOMENTS_SETTING_DTOBuilder &);
+  flatbuffers::Offset<T_MOMENTS_SETTING_DTO> Finish() {
+    auto o = flatbuffers::Offset<T_MOMENTS_SETTING_DTO>(fbb_.EndTable(start_, 8));
+    return o;
+  }
+};
+
+inline flatbuffers::Offset<T_MOMENTS_SETTING_DTO> CreateT_MOMENTS_SETTING_DTO(flatbuffers::FlatBufferBuilder &_fbb,
+    uint64_t user_id = 0,
+    int8_t list_10_pic_free = 0,
+    int8_t moments_scope = 0,
+    int8_t moments_enable = 0,
+    int8_t moments_notic = 0,
+    flatbuffers::Offset<flatbuffers::String> black_list = 0,
+    flatbuffers::Offset<flatbuffers::String> not_care_list = 0,
+    uint64_t update_time = 0) {
+  T_MOMENTS_SETTING_DTOBuilder builder_(_fbb);
+  builder_.add_update_time(update_time);
+  builder_.add_user_id(user_id);
+  builder_.add_not_care_list(not_care_list);
+  builder_.add_black_list(black_list);
+  builder_.add_moments_notic(moments_notic);
+  builder_.add_moments_enable(moments_enable);
+  builder_.add_moments_scope(moments_scope);
+  builder_.add_list_10_pic_free(list_10_pic_free);
+  return builder_.Finish();
+}
+
+inline flatbuffers::Offset<T_MOMENTS_SETTING_DTO> CreateT_MOMENTS_SETTING_DTODirect(flatbuffers::FlatBufferBuilder &_fbb,
+    uint64_t user_id = 0,
+    int8_t list_10_pic_free = 0,
+    int8_t moments_scope = 0,
+    int8_t moments_enable = 0,
+    int8_t moments_notic = 0,
+    const char *black_list = nullptr,
+    const char *not_care_list = nullptr,
+    uint64_t update_time = 0) {
+  return CreateT_MOMENTS_SETTING_DTO(_fbb, user_id, list_10_pic_free, moments_scope, moments_enable, moments_notic, black_list ? _fbb.CreateString(black_list) : 0, not_care_list ? _fbb.CreateString(not_care_list) : 0, update_time);
 }
 
 }  // namespace momentspack

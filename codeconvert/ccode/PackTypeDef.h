@@ -299,6 +299,10 @@
 //查询朋友圈信息
 #define NEW_DEF_MOMENTS_QUERYTIMELIME_RQ                    (NEW_DEF_MOMENTS_BASE + 22)
 #define NEW_DEF_MOMENTS_QUERYTIMELIME_RS                    (NEW_DEF_MOMENTS_BASE + 23)
+//推送朋友圈评论新增信息
+#define NEW_DEF_MOMENTS_ADDCOMMENT_NOTIFY                   (NEW_DEF_MOMENTS_BASE + 24)
+//推送朋友圈设置黑名单，不关注名单列表信息
+#define NEW_DEF_MOMENTS_UPDATESETTINGLIST_NOTIFY            (NEW_DEF_MOMENTS_BASE + 25)
 //////////////////////////////////////business end///////////////////////////////////////
 
 
