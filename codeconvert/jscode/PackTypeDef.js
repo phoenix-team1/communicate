@@ -300,5 +300,13 @@ var NEW_DEF_MOMENTS_QUERYTIMELIME_RS                         = (NEW_DEF_MOMENTS_
 var NEW_DEF_MOMENTS_ADDCOMMENT_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 24);
 //推送朋友圈设置黑名单，不关注名单列表信息
 var NEW_DEF_MOMENTS_UPDATESETTINGLIST_NOTIFY                 = (NEW_DEF_MOMENTS_BASE + 25);
+//推送删除文章信息
+var NEW_DEF_MOMENTS_DELARTICLE_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 26);
+//推送删除评论信息
+var NEW_DEF_MOMENTS_DELCOMMENT_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 27);
+//推送更新朋友圈设置信息
+var NEW_DEF_MOMENTS_UPDSETTING_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 28);
+//推送更新朋友圈黑名单，不关注名单信息
+var NEW_DEF_MOMENTS_UPDSETTINGLIST_NOTIFY                    = (NEW_DEF_MOMENTS_BASE + 29);
 //////////////////////////////////////business end///////////////////////////////////////
 
