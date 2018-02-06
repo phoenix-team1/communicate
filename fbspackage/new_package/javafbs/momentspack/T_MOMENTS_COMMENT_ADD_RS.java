@@ -16,13 +16,12 @@ public final class T_MOMENTS_COMMENT_ADD_RS extends Table {
 
   public commonpack.S_RS_HEAD sRsHead() { return sRsHead(new commonpack.S_RS_HEAD()); }
   public commonpack.S_RS_HEAD sRsHead(commonpack.S_RS_HEAD obj) { int o = __offset(4); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
-  public long peerUserId() { int o = __offset(6); return o != 0 ? bb.getLong(o + bb_pos) : 0L; }
-  public long commentId() { int o = __offset(8); return o != 0 ? bb.getLong(o + bb_pos) : 0L; }
+  public momentspack.T_MOMENTS_COMMENT_DTO comment() { return comment(new momentspack.T_MOMENTS_COMMENT_DTO()); }
+  public momentspack.T_MOMENTS_COMMENT_DTO comment(momentspack.T_MOMENTS_COMMENT_DTO obj) { int o = __offset(6); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
 
-  public static void startT_MOMENTS_COMMENT_ADD_RS(FlatBufferBuilder builder) { builder.startObject(3); }
+  public static void startT_MOMENTS_COMMENT_ADD_RS(FlatBufferBuilder builder) { builder.startObject(2); }
   public static void addSRsHead(FlatBufferBuilder builder, int sRsHeadOffset) { builder.addStruct(0, sRsHeadOffset, 0); }
-  public static void addPeerUserId(FlatBufferBuilder builder, long peerUserId) { builder.addLong(1, peerUserId, 0L); }
-  public static void addCommentId(FlatBufferBuilder builder, long commentId) { builder.addLong(2, commentId, 0L); }
+  public static void addComment(FlatBufferBuilder builder, int commentOffset) { builder.addOffset(1, commentOffset, 0); }
   public static int endT_MOMENTS_COMMENT_ADD_RS(FlatBufferBuilder builder) {
     int o = builder.endObject();
     return o;

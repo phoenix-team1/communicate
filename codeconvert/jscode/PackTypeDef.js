@@ -285,28 +285,23 @@ var NEW_DEF_MOMENTS_QUERYSETTING_RS                          = (NEW_DEF_MOMENTS_
 //更新朋友圈设置
 var NEW_DEF_MOMENTS_UPDSETTING_RQ                            = (NEW_DEF_MOMENTS_BASE + 15);
 var NEW_DEF_MOMENTS_UPDSETTING_RS                            = (NEW_DEF_MOMENTS_BASE + 16);
-//更新朋友圈黑名单设置
-var NEW_DEF_MOMENTS_UPDBLACKLIST_RQ                          = (NEW_DEF_MOMENTS_BASE + 17);
-var NEW_DEF_MOMENTS_UPDBLACKLIST_RS                          = (NEW_DEF_MOMENTS_BASE + 18);
-//更新不关注名单
-var NEW_DEF_MOMENTS_UPDNOTCARELIST_RQ                        = (NEW_DEF_MOMENTS_BASE + 19);
-var NEW_DEF_MOMENTS_UPDNOTCARELIST_RS                        = (NEW_DEF_MOMENTS_BASE + 20);
+//更新朋友圈黑名单,不关注名单设置
+var NEW_DEF_MOMENTS_UPDBLACKNOTCARELIST_RQ                   = (NEW_DEF_MOMENTS_BASE + 17);
+var NEW_DEF_MOMENTS_UPDBLACKNOTCARELIST_RS                   = (NEW_DEF_MOMENTS_BASE + 18);
 //推送朋友圈更新信息
-var NEW_DEF_MOMENTS_ADDARTICLE_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 21);
+var NEW_DEF_MOMENTS_ADDARTICLE_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 19);
 //查询朋友圈信息
-var NEW_DEF_MOMENTS_QUERYTIMELIME_RQ                         = (NEW_DEF_MOMENTS_BASE + 22);
-var NEW_DEF_MOMENTS_QUERYTIMELIME_RS                         = (NEW_DEF_MOMENTS_BASE + 23);
+var NEW_DEF_MOMENTS_QUERYTIMELIME_RQ                         = (NEW_DEF_MOMENTS_BASE + 20);
+var NEW_DEF_MOMENTS_QUERYTIMELIME_RS                         = (NEW_DEF_MOMENTS_BASE + 21);
 //推送朋友圈评论新增信息
-var NEW_DEF_MOMENTS_ADDCOMMENT_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 24);
+var NEW_DEF_MOMENTS_ADDCOMMENT_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 22);
 //推送朋友圈设置黑名单，不关注名单列表信息
-var NEW_DEF_MOMENTS_UPDATESETTINGLIST_NOTIFY                 = (NEW_DEF_MOMENTS_BASE + 25);
+var NEW_DEF_MOMENTS_UPDATESETTINGLIST_NOTIFY                 = (NEW_DEF_MOMENTS_BASE + 23);
 //推送删除文章信息
-var NEW_DEF_MOMENTS_DELARTICLE_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 26);
+var NEW_DEF_MOMENTS_DELARTICLE_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 24);
 //推送删除评论信息
-var NEW_DEF_MOMENTS_DELCOMMENT_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 27);
+var NEW_DEF_MOMENTS_DELCOMMENT_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 25);
 //推送更新朋友圈设置信息
-var NEW_DEF_MOMENTS_UPDSETTING_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 28);
-//推送更新朋友圈黑名单，不关注名单信息
-var NEW_DEF_MOMENTS_UPDSETTINGLIST_NOTIFY                    = (NEW_DEF_MOMENTS_BASE + 29);
+var NEW_DEF_MOMENTS_UPDSETTING_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 26);
 //////////////////////////////////////business end///////////////////////////////////////
 

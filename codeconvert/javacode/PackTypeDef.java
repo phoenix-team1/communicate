@@ -291,29 +291,24 @@ public interface PackTypeDef
     //更新朋友圈设置
     NEW_DEF_MOMENTS_UPDSETTING_RQ                       = (NEW_DEF_MOMENTS_BASE + 15),
     NEW_DEF_MOMENTS_UPDSETTING_RS                       = (NEW_DEF_MOMENTS_BASE + 16),
-    //更新朋友圈黑名单设置
-    NEW_DEF_MOMENTS_UPDBLACKLIST_RQ                     = (NEW_DEF_MOMENTS_BASE + 17),
-    NEW_DEF_MOMENTS_UPDBLACKLIST_RS                     = (NEW_DEF_MOMENTS_BASE + 18),
-    //更新不关注名单
-    NEW_DEF_MOMENTS_UPDNOTCARELIST_RQ                   = (NEW_DEF_MOMENTS_BASE + 19),
-    NEW_DEF_MOMENTS_UPDNOTCARELIST_RS                   = (NEW_DEF_MOMENTS_BASE + 20),
+    //更新朋友圈黑名单,不关注名单设置
+    NEW_DEF_MOMENTS_UPDBLACKNOTCARELIST_RQ              = (NEW_DEF_MOMENTS_BASE + 17),
+    NEW_DEF_MOMENTS_UPDBLACKNOTCARELIST_RS              = (NEW_DEF_MOMENTS_BASE + 18),
     //推送朋友圈更新信息
-    NEW_DEF_MOMENTS_ADDARTICLE_NOTIFY                   = (NEW_DEF_MOMENTS_BASE + 21),
+    NEW_DEF_MOMENTS_ADDARTICLE_NOTIFY                   = (NEW_DEF_MOMENTS_BASE + 19),
     //查询朋友圈信息
-    NEW_DEF_MOMENTS_QUERYTIMELIME_RQ                    = (NEW_DEF_MOMENTS_BASE + 22),
-    NEW_DEF_MOMENTS_QUERYTIMELIME_RS                    = (NEW_DEF_MOMENTS_BASE + 23),
+    NEW_DEF_MOMENTS_QUERYTIMELIME_RQ                    = (NEW_DEF_MOMENTS_BASE + 20),
+    NEW_DEF_MOMENTS_QUERYTIMELIME_RS                    = (NEW_DEF_MOMENTS_BASE + 21),
     //推送朋友圈评论新增信息
-    NEW_DEF_MOMENTS_ADDCOMMENT_NOTIFY                   = (NEW_DEF_MOMENTS_BASE + 24),
+    NEW_DEF_MOMENTS_ADDCOMMENT_NOTIFY                   = (NEW_DEF_MOMENTS_BASE + 22),
     //推送朋友圈设置黑名单，不关注名单列表信息
-    NEW_DEF_MOMENTS_UPDATESETTINGLIST_NOTIFY            = (NEW_DEF_MOMENTS_BASE + 25),
+    NEW_DEF_MOMENTS_UPDATESETTINGLIST_NOTIFY            = (NEW_DEF_MOMENTS_BASE + 23),
     //推送删除文章信息
-    NEW_DEF_MOMENTS_DELARTICLE_NOTIFY                   = (NEW_DEF_MOMENTS_BASE + 26),
+    NEW_DEF_MOMENTS_DELARTICLE_NOTIFY                   = (NEW_DEF_MOMENTS_BASE + 24),
     //推送删除评论信息
-    NEW_DEF_MOMENTS_DELCOMMENT_NOTIFY                   = (NEW_DEF_MOMENTS_BASE + 27),
+    NEW_DEF_MOMENTS_DELCOMMENT_NOTIFY                   = (NEW_DEF_MOMENTS_BASE + 25),
     //推送更新朋友圈设置信息
-    NEW_DEF_MOMENTS_UPDSETTING_NOTIFY                   = (NEW_DEF_MOMENTS_BASE + 28),
-    //推送更新朋友圈黑名单，不关注名单信息
-    NEW_DEF_MOMENTS_UPDSETTINGLIST_NOTIFY               = (NEW_DEF_MOMENTS_BASE + 29),
+    NEW_DEF_MOMENTS_UPDSETTING_NOTIFY                   = (NEW_DEF_MOMENTS_BASE + 26),
 //////////////////////////////////////business end///////////////////////////////////////
 
     END_OF_TYPE = 19999;

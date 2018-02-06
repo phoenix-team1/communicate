@@ -6,6 +6,7 @@
 #include "flatbuffers/flatbuffers.h"
 
 #include "common_generated.h"
+#include "t_moments_common_generated.h"
 
 namespace momentspack {
 
@@ -14,17 +15,15 @@ struct T_MOMENTS_COMMENT_ADD_RS;
 struct T_MOMENTS_COMMENT_ADD_RS FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   enum {
     VT_S_RS_HEAD = 4,
-    VT_PEER_USER_ID = 6,
-    VT_COMMENT_ID = 8
+    VT_COMMENT = 6
   };
   const commonpack::S_RS_HEAD *s_rs_head() const { return GetStruct<const commonpack::S_RS_HEAD *>(VT_S_RS_HEAD); }
-  uint64_t peer_user_id() const { return GetField<uint64_t>(VT_PEER_USER_ID, 0); }
-  uint64_t comment_id() const { return GetField<uint64_t>(VT_COMMENT_ID, 0); }
+  const momentspack::T_MOMENTS_COMMENT_DTO *comment() const { return GetPointer<const momentspack::T_MOMENTS_COMMENT_DTO *>(VT_COMMENT); }
   bool Verify(flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
            VerifyField<commonpack::S_RS_HEAD>(verifier, VT_S_RS_HEAD) &&
-           VerifyField<uint64_t>(verifier, VT_PEER_USER_ID) &&
-           VerifyField<uint64_t>(verifier, VT_COMMENT_ID) &&
+           VerifyField<flatbuffers::uoffset_t>(verifier, VT_COMMENT) &&
+           verifier.VerifyTable(comment()) &&
            verifier.EndTable();
   }
 };
@@ -33,23 +32,20 @@ struct T_MOMENTS_COMMENT_ADD_RSBuilder {
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_s_rs_head(const commonpack::S_RS_HEAD *s_rs_head) { fbb_.AddStruct(T_MOMENTS_COMMENT_ADD_RS::VT_S_RS_HEAD, s_rs_head); }
-  void add_peer_user_id(uint64_t peer_user_id) { fbb_.AddElement<uint64_t>(T_MOMENTS_COMMENT_ADD_RS::VT_PEER_USER_ID, peer_user_id, 0); }
-  void add_comment_id(uint64_t comment_id) { fbb_.AddElement<uint64_t>(T_MOMENTS_COMMENT_ADD_RS::VT_COMMENT_ID, comment_id, 0); }
+  void add_comment(flatbuffers::Offset<momentspack::T_MOMENTS_COMMENT_DTO> comment) { fbb_.AddOffset(T_MOMENTS_COMMENT_ADD_RS::VT_COMMENT, comment); }
   T_MOMENTS_COMMENT_ADD_RSBuilder(flatbuffers::FlatBufferBuilder &_fbb) : fbb_(_fbb) { start_ = fbb_.StartTable(); }
   T_MOMENTS_COMMENT_ADD_RSBuilder &operator=(const T_MOMENTS_COMMENT_ADD_RSBuilder &);
   flatbuffers::Offset<T_MOMENTS_COMMENT_ADD_RS> Finish() {
-    auto o = flatbuffers::Offset<T_MOMENTS_COMMENT_ADD_RS>(fbb_.EndTable(start_, 3));
+    auto o = flatbuffers::Offset<T_MOMENTS_COMMENT_ADD_RS>(fbb_.EndTable(start_, 2));
     return o;
   }
 };
 
 inline flatbuffers::Offset<T_MOMENTS_COMMENT_ADD_RS> CreateT_MOMENTS_COMMENT_ADD_RS(flatbuffers::FlatBufferBuilder &_fbb,
     const commonpack::S_RS_HEAD *s_rs_head = 0,
-    uint64_t peer_user_id = 0,
-    uint64_t comment_id = 0) {
+    flatbuffers::Offset<momentspack::T_MOMENTS_COMMENT_DTO> comment = 0) {
   T_MOMENTS_COMMENT_ADD_RSBuilder builder_(_fbb);
-  builder_.add_comment_id(comment_id);
-  builder_.add_peer_user_id(peer_user_id);
+  builder_.add_comment(comment);
   builder_.add_s_rs_head(s_rs_head);
   return builder_.Finish();
 }

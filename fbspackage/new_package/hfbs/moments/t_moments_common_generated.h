@@ -282,7 +282,7 @@ struct T_MOMENTS_SETTING_DTO FLATBUFFERS_FINAL_CLASS : private flatbuffers::Tabl
     VT_LIST_10_PIC_FREE = 6,
     VT_MOMENTS_SCOPE = 8,
     VT_MOMENTS_ENABLE = 10,
-    VT_MOMENTS_NOTIC = 12,
+    VT_MOMENTS_NOTICE = 12,
     VT_BLACK_LIST = 14,
     VT_NOT_CARE_LIST = 16,
     VT_UPDATE_TIME = 18
@@ -291,7 +291,7 @@ struct T_MOMENTS_SETTING_DTO FLATBUFFERS_FINAL_CLASS : private flatbuffers::Tabl
   int8_t list_10_pic_free() const { return GetField<int8_t>(VT_LIST_10_PIC_FREE, 0); }
   int8_t moments_scope() const { return GetField<int8_t>(VT_MOMENTS_SCOPE, 0); }
   int8_t moments_enable() const { return GetField<int8_t>(VT_MOMENTS_ENABLE, 0); }
-  int8_t moments_notic() const { return GetField<int8_t>(VT_MOMENTS_NOTIC, 0); }
+  int8_t moments_notice() const { return GetField<int8_t>(VT_MOMENTS_NOTICE, 0); }
   const flatbuffers::String *black_list() const { return GetPointer<const flatbuffers::String *>(VT_BLACK_LIST); }
   const flatbuffers::String *not_care_list() const { return GetPointer<const flatbuffers::String *>(VT_NOT_CARE_LIST); }
   uint64_t update_time() const { return GetField<uint64_t>(VT_UPDATE_TIME, 0); }
@@ -301,7 +301,7 @@ struct T_MOMENTS_SETTING_DTO FLATBUFFERS_FINAL_CLASS : private flatbuffers::Tabl
            VerifyField<int8_t>(verifier, VT_LIST_10_PIC_FREE) &&
            VerifyField<int8_t>(verifier, VT_MOMENTS_SCOPE) &&
            VerifyField<int8_t>(verifier, VT_MOMENTS_ENABLE) &&
-           VerifyField<int8_t>(verifier, VT_MOMENTS_NOTIC) &&
+           VerifyField<int8_t>(verifier, VT_MOMENTS_NOTICE) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_BLACK_LIST) &&
            verifier.Verify(black_list()) &&
            VerifyField<flatbuffers::uoffset_t>(verifier, VT_NOT_CARE_LIST) &&
@@ -318,7 +318,7 @@ struct T_MOMENTS_SETTING_DTOBuilder {
   void add_list_10_pic_free(int8_t list_10_pic_free) { fbb_.AddElement<int8_t>(T_MOMENTS_SETTING_DTO::VT_LIST_10_PIC_FREE, list_10_pic_free, 0); }
   void add_moments_scope(int8_t moments_scope) { fbb_.AddElement<int8_t>(T_MOMENTS_SETTING_DTO::VT_MOMENTS_SCOPE, moments_scope, 0); }
   void add_moments_enable(int8_t moments_enable) { fbb_.AddElement<int8_t>(T_MOMENTS_SETTING_DTO::VT_MOMENTS_ENABLE, moments_enable, 0); }
-  void add_moments_notic(int8_t moments_notic) { fbb_.AddElement<int8_t>(T_MOMENTS_SETTING_DTO::VT_MOMENTS_NOTIC, moments_notic, 0); }
+  void add_moments_notice(int8_t moments_notice) { fbb_.AddElement<int8_t>(T_MOMENTS_SETTING_DTO::VT_MOMENTS_NOTICE, moments_notice, 0); }
   void add_black_list(flatbuffers::Offset<flatbuffers::String> black_list) { fbb_.AddOffset(T_MOMENTS_SETTING_DTO::VT_BLACK_LIST, black_list); }
   void add_not_care_list(flatbuffers::Offset<flatbuffers::String> not_care_list) { fbb_.AddOffset(T_MOMENTS_SETTING_DTO::VT_NOT_CARE_LIST, not_care_list); }
   void add_update_time(uint64_t update_time) { fbb_.AddElement<uint64_t>(T_MOMENTS_SETTING_DTO::VT_UPDATE_TIME, update_time, 0); }
@@ -335,7 +335,7 @@ inline flatbuffers::Offset<T_MOMENTS_SETTING_DTO> CreateT_MOMENTS_SETTING_DTO(fl
     int8_t list_10_pic_free = 0,
     int8_t moments_scope = 0,
     int8_t moments_enable = 0,
-    int8_t moments_notic = 0,
+    int8_t moments_notice = 0,
     flatbuffers::Offset<flatbuffers::String> black_list = 0,
     flatbuffers::Offset<flatbuffers::String> not_care_list = 0,
     uint64_t update_time = 0) {
@@ -344,7 +344,7 @@ inline flatbuffers::Offset<T_MOMENTS_SETTING_DTO> CreateT_MOMENTS_SETTING_DTO(fl
   builder_.add_user_id(user_id);
   builder_.add_not_care_list(not_care_list);
   builder_.add_black_list(black_list);
-  builder_.add_moments_notic(moments_notic);
+  builder_.add_moments_notice(moments_notice);
   builder_.add_moments_enable(moments_enable);
   builder_.add_moments_scope(moments_scope);
   builder_.add_list_10_pic_free(list_10_pic_free);
@@ -356,11 +356,11 @@ inline flatbuffers::Offset<T_MOMENTS_SETTING_DTO> CreateT_MOMENTS_SETTING_DTODir
     int8_t list_10_pic_free = 0,
     int8_t moments_scope = 0,
     int8_t moments_enable = 0,
-    int8_t moments_notic = 0,
+    int8_t moments_notice = 0,
     const char *black_list = nullptr,
     const char *not_care_list = nullptr,
     uint64_t update_time = 0) {
-  return CreateT_MOMENTS_SETTING_DTO(_fbb, user_id, list_10_pic_free, moments_scope, moments_enable, moments_notic, black_list ? _fbb.CreateString(black_list) : 0, not_care_list ? _fbb.CreateString(not_care_list) : 0, update_time);
+  return CreateT_MOMENTS_SETTING_DTO(_fbb, user_id, list_10_pic_free, moments_scope, moments_enable, moments_notice, black_list ? _fbb.CreateString(black_list) : 0, not_care_list ? _fbb.CreateString(not_care_list) : 0, update_time);
 }
 
 }  // namespace momentspack

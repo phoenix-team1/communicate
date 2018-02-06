@@ -18,7 +18,7 @@ public final class T_MOMENTS_SETTING_DTO extends Table {
   public byte list10PicFree() { int o = __offset(6); return o != 0 ? bb.get(o + bb_pos) : 0; }
   public byte momentsScope() { int o = __offset(8); return o != 0 ? bb.get(o + bb_pos) : 0; }
   public byte momentsEnable() { int o = __offset(10); return o != 0 ? bb.get(o + bb_pos) : 0; }
-  public byte momentsNotic() { int o = __offset(12); return o != 0 ? bb.get(o + bb_pos) : 0; }
+  public byte momentsNotice() { int o = __offset(12); return o != 0 ? bb.get(o + bb_pos) : 0; }
   public String blackList() { int o = __offset(14); return o != 0 ? __string(o + bb_pos) : null; }
   public ByteBuffer blackListAsByteBuffer() { return __vector_as_bytebuffer(14, 1); }
   public String notCareList() { int o = __offset(16); return o != 0 ? __string(o + bb_pos) : null; }
@@ -30,7 +30,7 @@ public final class T_MOMENTS_SETTING_DTO extends Table {
       byte list_10_pic_free,
       byte moments_scope,
       byte moments_enable,
-      byte moments_notic,
+      byte moments_notice,
       int black_listOffset,
       int not_care_listOffset,
       long update_time) {
@@ -39,7 +39,7 @@ public final class T_MOMENTS_SETTING_DTO extends Table {
     T_MOMENTS_SETTING_DTO.addUserId(builder, user_id);
     T_MOMENTS_SETTING_DTO.addNotCareList(builder, not_care_listOffset);
     T_MOMENTS_SETTING_DTO.addBlackList(builder, black_listOffset);
-    T_MOMENTS_SETTING_DTO.addMomentsNotic(builder, moments_notic);
+    T_MOMENTS_SETTING_DTO.addMomentsNotice(builder, moments_notice);
     T_MOMENTS_SETTING_DTO.addMomentsEnable(builder, moments_enable);
     T_MOMENTS_SETTING_DTO.addMomentsScope(builder, moments_scope);
     T_MOMENTS_SETTING_DTO.addList10PicFree(builder, list_10_pic_free);
@@ -51,7 +51,7 @@ public final class T_MOMENTS_SETTING_DTO extends Table {
   public static void addList10PicFree(FlatBufferBuilder builder, byte list10PicFree) { builder.addByte(1, list10PicFree, 0); }
   public static void addMomentsScope(FlatBufferBuilder builder, byte momentsScope) { builder.addByte(2, momentsScope, 0); }
   public static void addMomentsEnable(FlatBufferBuilder builder, byte momentsEnable) { builder.addByte(3, momentsEnable, 0); }
-  public static void addMomentsNotic(FlatBufferBuilder builder, byte momentsNotic) { builder.addByte(4, momentsNotic, 0); }
+  public static void addMomentsNotice(FlatBufferBuilder builder, byte momentsNotice) { builder.addByte(4, momentsNotice, 0); }
   public static void addBlackList(FlatBufferBuilder builder, int blackListOffset) { builder.addOffset(5, blackListOffset, 0); }
   public static void addNotCareList(FlatBufferBuilder builder, int notCareListOffset) { builder.addOffset(6, notCareListOffset, 0); }
   public static void addUpdateTime(FlatBufferBuilder builder, long updateTime) { builder.addLong(7, updateTime, 0L); }

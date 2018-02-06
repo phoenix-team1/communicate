@@ -120,8 +120,7 @@ public class ErrorDetail
         error_detail_map.put(ErrorCodeDef.RET_MOMENTS_COMMENT_SAVE_ERROR,"评论保存异常，请稍后再试!");
         error_detail_map.put(ErrorCodeDef.RET_MOMENTS_COMMENT_DELETED_ERROR,"评论删除异常，请稍候再试!");
         error_detail_map.put(ErrorCodeDef.RET_MOMENTS_SETTING_SAVE_ERROR,"朋友圈设置保存异常，请稍候再试!");
-        error_detail_map.put(ErrorCodeDef.RET_MOMENTS_SETTING_BLACKLIST_SAVE_ERROR,"朋友圈黑名单设置保存异常，请稍候再试!");
-        error_detail_map.put(ErrorCodeDef.RET_MOMENTS_SETTING_NOTCARELIST_SAVE_ERROR,"朋友圈不关注设置保存异常，请稍候再试!");
+        error_detail_map.put(ErrorCodeDef.RET_MOMENTS_SETTING_LIST_SAVE_ERROR,"朋友圈黑名单,不关注名单设置保存异常，请稍候再试!");
         error_detail_map.put(ErrorCodeDef.RET_MOMENTS_SETTING_QUERY_ERROR,"朋友圈配置查询异常，请稍候再试!");
         error_detail_map.put(ErrorCodeDef.RET_MOMENTS_PARAM_ERROR,"操作参数错误！");
         //////////////////////////////////////business end///////////////////////////////////////

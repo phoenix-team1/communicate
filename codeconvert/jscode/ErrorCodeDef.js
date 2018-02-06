@@ -207,10 +207,8 @@ var RET_MOMENTS_COMMENT_SAVE_ERROR                           = (RET_MOMENTS_BASE
 var RET_MOMENTS_COMMENT_DELETED_ERROR                        = (RET_MOMENTS_BASE + 5);
 //朋友圈设置保存异常，请稍候再试!
 var RET_MOMENTS_SETTING_SAVE_ERROR                           = (RET_MOMENTS_BASE + 6);
-//朋友圈黑名单设置保存异常，请稍候再试!
-var RET_MOMENTS_SETTING_BLACKLIST_SAVE_ERROR                 = (RET_MOMENTS_BASE + 7);
-//朋友圈不关注设置保存异常，请稍候再试!
-var RET_MOMENTS_SETTING_NOTCARELIST_SAVE_ERROR               = (RET_MOMENTS_BASE + 8);
+//朋友圈黑名单,不关注名单设置保存异常，请稍候再试!
+var RET_MOMENTS_SETTING_LIST_SAVE_ERROR                      = (RET_MOMENTS_BASE + 7);
 //朋友圈配置查询异常，请稍候再试!
 var RET_MOMENTS_SETTING_QUERY_ERROR                          = (RET_MOMENTS_BASE + 9);
 //操作参数错误！
