@@ -309,6 +309,9 @@ public interface PackTypeDef
     NEW_DEF_MOMENTS_DELCOMMENT_NOTIFY                   = (NEW_DEF_MOMENTS_BASE + 25),
     //推送更新朋友圈设置信息
     NEW_DEF_MOMENTS_UPDSETTING_NOTIFY                   = (NEW_DEF_MOMENTS_BASE + 26),
+    //查询指定用户图文类型文章列表
+    NEW_DEF_MOMENTS_QUERYPICARTICLE_RQ                  = (NEW_DEF_MOMENTS_BASE + 27),
+    NEW_DEF_MOMENTS_QUERYPICARTICLE_RS                  = (NEW_DEF_MOMENTS_BASE + 28),
 //////////////////////////////////////business end///////////////////////////////////////
 
     END_OF_TYPE = 19999;

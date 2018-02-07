@@ -19,28 +19,6 @@ struct T_MOMENTS_SETTING_DTO;
 
 struct T_SETTING_LIST_DTO;
 
-MANUALLY_ALIGNED_STRUCT(8) T_SETTING_LIST_DTO FLATBUFFERS_FINAL_CLASS {
- private:
-  uint64_t user_id_;
-  uint64_t friend_id_;
-  int8_t list_type_;
-  int8_t list_value_;
-  int16_t __padding0;
-  int32_t __padding1;
-
- public:
-  T_SETTING_LIST_DTO() { memset(this, 0, sizeof(T_SETTING_LIST_DTO)); }
-  T_SETTING_LIST_DTO(const T_SETTING_LIST_DTO &_o) { memcpy(this, &_o, sizeof(T_SETTING_LIST_DTO)); }
-  T_SETTING_LIST_DTO(uint64_t _user_id, uint64_t _friend_id, int8_t _list_type, int8_t _list_value)
-    : user_id_(flatbuffers::EndianScalar(_user_id)), friend_id_(flatbuffers::EndianScalar(_friend_id)), list_type_(flatbuffers::EndianScalar(_list_type)), list_value_(flatbuffers::EndianScalar(_list_value)), __padding0(0), __padding1(0) { (void)__padding0; (void)__padding1; }
-
-  uint64_t user_id() const { return flatbuffers::EndianScalar(user_id_); }
-  uint64_t friend_id() const { return flatbuffers::EndianScalar(friend_id_); }
-  int8_t list_type() const { return flatbuffers::EndianScalar(list_type_); }
-  int8_t list_value() const { return flatbuffers::EndianScalar(list_value_); }
-};
-STRUCT_END(T_SETTING_LIST_DTO, 24);
-
 struct T_TIMELINE_DTO FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   enum {
     VT_ARTICLE_USER_ID = 4,
@@ -361,6 +339,55 @@ inline flatbuffers::Offset<T_MOMENTS_SETTING_DTO> CreateT_MOMENTS_SETTING_DTODir
     const char *not_care_list = nullptr,
     uint64_t update_time = 0) {
   return CreateT_MOMENTS_SETTING_DTO(_fbb, user_id, list_10_pic_free, moments_scope, moments_enable, moments_notice, black_list ? _fbb.CreateString(black_list) : 0, not_care_list ? _fbb.CreateString(not_care_list) : 0, update_time);
+}
+
+struct T_SETTING_LIST_DTO FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  enum {
+    VT_USER_ID = 4,
+    VT_FRIEND_ID = 6,
+    VT_LIST_TYPE = 8,
+    VT_LIST_VALUE = 10
+  };
+  uint64_t user_id() const { return GetField<uint64_t>(VT_USER_ID, 0); }
+  uint64_t friend_id() const { return GetField<uint64_t>(VT_FRIEND_ID, 0); }
+  int8_t list_type() const { return GetField<int8_t>(VT_LIST_TYPE, 0); }
+  int8_t list_value() const { return GetField<int8_t>(VT_LIST_VALUE, 0); }
+  bool Verify(flatbuffers::Verifier &verifier) const {
+    return VerifyTableStart(verifier) &&
+           VerifyField<uint64_t>(verifier, VT_USER_ID) &&
+           VerifyField<uint64_t>(verifier, VT_FRIEND_ID) &&
+           VerifyField<int8_t>(verifier, VT_LIST_TYPE) &&
+           VerifyField<int8_t>(verifier, VT_LIST_VALUE) &&
+           verifier.EndTable();
+  }
+};
+
+struct T_SETTING_LIST_DTOBuilder {
+  flatbuffers::FlatBufferBuilder &fbb_;
+  flatbuffers::uoffset_t start_;
+  void add_user_id(uint64_t user_id) { fbb_.AddElement<uint64_t>(T_SETTING_LIST_DTO::VT_USER_ID, user_id, 0); }
+  void add_friend_id(uint64_t friend_id) { fbb_.AddElement<uint64_t>(T_SETTING_LIST_DTO::VT_FRIEND_ID, friend_id, 0); }
+  void add_list_type(int8_t list_type) { fbb_.AddElement<int8_t>(T_SETTING_LIST_DTO::VT_LIST_TYPE, list_type, 0); }
+  void add_list_value(int8_t list_value) { fbb_.AddElement<int8_t>(T_SETTING_LIST_DTO::VT_LIST_VALUE, list_value, 0); }
+  T_SETTING_LIST_DTOBuilder(flatbuffers::FlatBufferBuilder &_fbb) : fbb_(_fbb) { start_ = fbb_.StartTable(); }
+  T_SETTING_LIST_DTOBuilder &operator=(const T_SETTING_LIST_DTOBuilder &);
+  flatbuffers::Offset<T_SETTING_LIST_DTO> Finish() {
+    auto o = flatbuffers::Offset<T_SETTING_LIST_DTO>(fbb_.EndTable(start_, 4));
+    return o;
+  }
+};
+
+inline flatbuffers::Offset<T_SETTING_LIST_DTO> CreateT_SETTING_LIST_DTO(flatbuffers::FlatBufferBuilder &_fbb,
+    uint64_t user_id = 0,
+    uint64_t friend_id = 0,
+    int8_t list_type = 0,
+    int8_t list_value = 0) {
+  T_SETTING_LIST_DTOBuilder builder_(_fbb);
+  builder_.add_friend_id(friend_id);
+  builder_.add_user_id(user_id);
+  builder_.add_list_value(list_value);
+  builder_.add_list_type(list_type);
+  return builder_.Finish();
 }
 
 }  // namespace momentspack

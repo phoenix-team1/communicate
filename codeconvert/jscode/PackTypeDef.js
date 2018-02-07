@@ -303,5 +303,8 @@ var NEW_DEF_MOMENTS_DELARTICLE_NOTIFY                        = (NEW_DEF_MOMENTS_
 var NEW_DEF_MOMENTS_DELCOMMENT_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 25);
 //推送更新朋友圈设置信息
 var NEW_DEF_MOMENTS_UPDSETTING_NOTIFY                        = (NEW_DEF_MOMENTS_BASE + 26);
+//查询指定用户图文类型文章列表
+var NEW_DEF_MOMENTS_QUERYPICARTICLE_RQ                       = (NEW_DEF_MOMENTS_BASE + 27);
+var NEW_DEF_MOMENTS_QUERYPICARTICLE_RS                       = (NEW_DEF_MOMENTS_BASE + 28);
 //////////////////////////////////////business end///////////////////////////////////////
 

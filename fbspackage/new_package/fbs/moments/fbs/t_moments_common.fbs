@@ -46,7 +46,7 @@ table T_MOMENTS_SETTING_DTO
 	update_time:ulong;	//更新时间
 }
 
-struct T_SETTING_LIST_DTO
+table T_SETTING_LIST_DTO
 {
 	user_id:ulong;		//用户id
 	friend_id:ulong;	//好友id

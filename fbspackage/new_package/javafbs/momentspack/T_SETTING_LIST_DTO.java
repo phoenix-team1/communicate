@@ -8,23 +8,38 @@ import java.util.*;
 import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
-public final class T_SETTING_LIST_DTO extends Struct {
+public final class T_SETTING_LIST_DTO extends Table {
+  public static T_SETTING_LIST_DTO getRootAsT_SETTING_LIST_DTO(ByteBuffer _bb) { return getRootAsT_SETTING_LIST_DTO(_bb, new T_SETTING_LIST_DTO()); }
+  public static T_SETTING_LIST_DTO getRootAsT_SETTING_LIST_DTO(ByteBuffer _bb, T_SETTING_LIST_DTO obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
   public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; }
   public T_SETTING_LIST_DTO __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public long userId() { return bb.getLong(bb_pos + 0); }
-  public long friendId() { return bb.getLong(bb_pos + 8); }
-  public byte listType() { return bb.get(bb_pos + 16); }
-  public byte listValue() { return bb.get(bb_pos + 17); }
+  public long userId() { int o = __offset(4); return o != 0 ? bb.getLong(o + bb_pos) : 0L; }
+  public long friendId() { int o = __offset(6); return o != 0 ? bb.getLong(o + bb_pos) : 0L; }
+  public byte listType() { int o = __offset(8); return o != 0 ? bb.get(o + bb_pos) : 0; }
+  public byte listValue() { int o = __offset(10); return o != 0 ? bb.get(o + bb_pos) : 0; }
 
-  public static int createT_SETTING_LIST_DTO(FlatBufferBuilder builder, long userId, long friendId, byte listType, byte listValue) {
-    builder.prep(8, 24);
-    builder.pad(6);
-    builder.putByte(listValue);
-    builder.putByte(listType);
-    builder.putLong(friendId);
-    builder.putLong(userId);
-    return builder.offset();
+  public static int createT_SETTING_LIST_DTO(FlatBufferBuilder builder,
+      long user_id,
+      long friend_id,
+      byte list_type,
+      byte list_value) {
+    builder.startObject(4);
+    T_SETTING_LIST_DTO.addFriendId(builder, friend_id);
+    T_SETTING_LIST_DTO.addUserId(builder, user_id);
+    T_SETTING_LIST_DTO.addListValue(builder, list_value);
+    T_SETTING_LIST_DTO.addListType(builder, list_type);
+    return T_SETTING_LIST_DTO.endT_SETTING_LIST_DTO(builder);
+  }
+
+  public static void startT_SETTING_LIST_DTO(FlatBufferBuilder builder) { builder.startObject(4); }
+  public static void addUserId(FlatBufferBuilder builder, long userId) { builder.addLong(0, userId, 0L); }
+  public static void addFriendId(FlatBufferBuilder builder, long friendId) { builder.addLong(1, friendId, 0L); }
+  public static void addListType(FlatBufferBuilder builder, byte listType) { builder.addByte(2, listType, 0); }
+  public static void addListValue(FlatBufferBuilder builder, byte listValue) { builder.addByte(3, listValue, 0); }
+  public static int endT_SETTING_LIST_DTO(FlatBufferBuilder builder) {
+    int o = builder.endObject();
+    return o;
   }
 }
 
