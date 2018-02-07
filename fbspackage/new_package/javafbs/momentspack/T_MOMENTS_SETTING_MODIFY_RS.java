@@ -16,11 +16,12 @@ public final class T_MOMENTS_SETTING_MODIFY_RS extends Table {
 
   public commonpack.S_RS_HEAD sRsHead() { return sRsHead(new commonpack.S_RS_HEAD()); }
   public commonpack.S_RS_HEAD sRsHead(commonpack.S_RS_HEAD obj) { int o = __offset(4); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
-  public long userId() { int o = __offset(6); return o != 0 ? bb.getLong(o + bb_pos) : 0L; }
+  public momentspack.T_MOMENTS_SETTING_DTO setting() { return setting(new momentspack.T_MOMENTS_SETTING_DTO()); }
+  public momentspack.T_MOMENTS_SETTING_DTO setting(momentspack.T_MOMENTS_SETTING_DTO obj) { int o = __offset(6); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
 
   public static void startT_MOMENTS_SETTING_MODIFY_RS(FlatBufferBuilder builder) { builder.startObject(2); }
   public static void addSRsHead(FlatBufferBuilder builder, int sRsHeadOffset) { builder.addStruct(0, sRsHeadOffset, 0); }
-  public static void addUserId(FlatBufferBuilder builder, long userId) { builder.addLong(1, userId, 0L); }
+  public static void addSetting(FlatBufferBuilder builder, int settingOffset) { builder.addOffset(1, settingOffset, 0); }
   public static int endT_MOMENTS_SETTING_MODIFY_RS(FlatBufferBuilder builder) {
     int o = builder.endObject();
     return o;
